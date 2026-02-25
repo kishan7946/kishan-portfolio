@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bommali Kishan Kumar | Data Analyst Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================= BACKGROUND PARTICLES ================= */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+        }
+
+        /* ================= FLOATING ANALYTICS ICONS ================= */
+        .floating-icons {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .floating-icons img {
+            position: absolute;
+            width: 40px;
+            opacity: 0.15;
+            animation: floatIcons 18s linear infinite;
+        }
+
+        @keyframes floatIcons {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+            }
+        }
+
+        /* ================= GLOBAL ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #0f0f0f;
+            --card: #1a1a1a;
+            --text: #ffffff;
+            --main: #ff6b00;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* ================= HEADER ================= */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--main);
+        }
+
+        .navbar a {
+            padding: 8px 14px;
+            margin-left: 6px;
+            border-radius: 20px;
+            color: white;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .navbar a:hover {
+            background: var(--main);
+            color: black;
+        }
+
+        /* ================= PROFILE ================= */
+        .profile-pic img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--main);
+            cursor: pointer;
+        }
+
+        /* ================= MODAL ================= */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        /* ================= SECTIONS ================= */
+        section {
+            padding: 120px 8% 60px;
+            min-height: 100vh;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .heading span {
+            color: var(--main);
+        }
+
+        /* ================= HOME ================= */
+        #home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background: var(--main);
+            margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+
+        /* ================= ABOUT ================= */
+        .about-box {
+            background: var(--card);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .hobbies {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hobby {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: .4s;
+        }
+
+        .hobby img {
+            width: 70px;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hobby:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* ================= GRID ================= */
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 15px;
+            width: 260px;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .card img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 15px var(--main);
+        }
+
+        .box {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 15px auto;
+        }
+
+        .footer {
+            background: var(--card);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: .6s;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="particles"></canvas>
+
+    <div class="floating-icons">
+        <img src="https://img.icons8.com/color/96/power-bi.png" style="left:10%;animation-delay:0s;">
+        <img src="https://img.icons8.com/color/96/python.png" style="left:30%;animation-delay:4s;">
+        <img src="https://img.icons8.com/color/96/combo-chart.png" style="left:50%;animation-delay:8s;">
+        <img src="https://img.icons8.com/color/96/database.png" style="left:70%;animation-delay:12s;">
+        <img src="https://img.icons8.com/color/96/tableau-software.png" style="left:85%;animation-delay:16s;">
+    </div>
+
+    <header class="header">
+        <div class="logo">Kishan<span>Kumar</span></div>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#internships">Internships</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="profile-pic">
+            <img src="profile.jpg" id="profileImage">
+        </div>
+    </header>
+
+    <div class="modal" id="imageModal">
+        <img src="profile.jpg">
+    </div>
+
+    <!-- HOME -->
+    <section id="home">
+        <h1>Bommali <span style="color:#ff6b00;">Kishan Kumar</span></h1>
+        <h3><span id="typing"></span><span class="cursor"></span></h3>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        <div class="about-box hidden">
+            <p>
+                Motivated Data Analyst skilled in Power BI, Python, SQL, Tableau and Excel.
+                Passionate about transforming raw data into meaningful business insights.
+            </p>
+            <div class="hobbies">
+                <div class="hobby">
+                    <img src="https://img.icons8.com/color/96/music.png">
+                    Music Editing
+                </div>
+                <div class="hobby">
+                    <img src="https://img.icons8.com/color/96/football2.png">
+                    Sports
+                </div>
+                <div class="hobby">
+                    <img src="https://img.icons8.com/color/96/combo-chart.png">
+                    Data Exploration
+                </div>
+                <div class="hobby">
+                    <img src="https://img.icons8.com/color/96/laptop.png">
+                    Learning Tech
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="heading">Technical <span>Skills</span></h2>
+        <div class="grid">
+            <div class="card hidden"><img src="https://img.icons8.com/color/96/power-bi.png">Power BI</div>
+            <div class="card hidden"><img src="https://img.icons8.com/color/96/python.png">Python</div>
+            <div class="card hidden"><img src="https://img.icons8.com/ios-filled/100/ffffff/sql.png">SQL</div>
+            <div class="card hidden"><img src="https://img.icons8.com/color/96/microsoft-excel-2019.png">Excel</div>
+            <div class="card hidden"><img src="https://img.icons8.com/color/96/tableau-software.png">Tableau</div>
+            <div class="card hidden"><img src="https://img.icons8.com/color/96/postgreesql.png">PostgreSQL</div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="heading">Projects</h2>
+        <div class="grid">
+            <a href="hr-dashboard.html" class="card"><img src="https://img.icons8.com/color/96/combo-chart.png">HR
+                Analytics Dashboard</a>
+            <a href="heart-disease.html" class="card">
+                <img src="https://img.icons8.com/color/96/heart-with-pulse.png">
+                Heart Disease Prediction
+            </a>
+            <div class="card"><img src="https://img.icons8.com/color/96/food.png">Food Distribution System</div>
+            <div class="card"><img src="https://img.icons8.com/color/96/security-checked.png">Multi-Layered
+                Authentication</div>
+        </div>
+    </section>
+
+    <!-- INTERNSHIPS -->
+    <section id="internships">
+        <h2 class="heading">Internships</h2>
+        <div class="box hidden">
+            <h3>Data Analyst Intern – Kridz Techno Solutions</h3>
+            Worked on Salesforce CRM, business analytics and reporting dashboards.
+        </div>
+        <div class="box hidden">
+            <h3>Salesforce Virtual Internship</h3>
+            Learned CRM fundamentals, workflow automation and cloud data handling.
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+        <h2 class="heading">Certifications</h2>
+        <div class="grid">
+            <div class="card hidden">Power BI – Simplilearn</div>
+            <div class="card hidden">Business Analytics – Simplilearn</div>
+            <div class="card hidden">Cisco Python & C</div>
+            <div class="card hidden">Tableau – Simplilearn</div>
+            <div class="card hidden">PostgreSQL – Simplilearn</div>
+            <div class="card hidden">ChatGPT for Excel</div>
+            <div class="card hidden">Salesforce Trailblazer</div>
+            <div class="card hidden">AICTE Leadership</div>
+            <div class="card hidden">Accenture Innovation Challenge</div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="heading">Contact</h2>
+        <div class="box">
+            <h3>
+                <span id="contactTyping"></span>
+                <span class="cursor"></span>
+                <img src="https://img.icons8.com/color/48/power-bi.png"
+                    style="vertical-align:middle;margin-left:10px;width:25px;">
+            </h3>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2026 Bommali Kishan Kumar
+    </footer>
+
+    <script>
+
+        /* HOME TYPING */
+        const text = "Data Analyst | Power BI | Python | SQL";
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, 80);
+            }
+        }
+        typing();
+
+        /* CONTACT TYPING */
+        const contactText = "Email: kishankarthik7946@gmail.com | Phone: 9392720733 | Hyderabad";
+        let j = 0;
+        function contactTyping() {
+            if (j < contactText.length) {
+                document.getElementById("contactTyping").innerHTML += contactText.charAt(j);
+                j++;
+                setTimeout(contactTyping, 40);
+            }
+        }
+        contactTyping();
+
+        /* PROFILE POPUP */
+        const modal = document.getElementById("imageModal");
+        document.getElementById("profileImage").onclick = () => modal.style.display = "flex";
+        modal.onclick = () => modal.style.display = "none";
+
+        /* SCROLL REVEAL */
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.2 });
+        document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+        /* PARTICLES */
+        const canvas = document.getElementById("particles");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particles = [];
+        for (let i = 0; i < 60; i++) {
+            particles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, r: Math.random() * 2, dx: (Math.random() - 0.5) * 0.4, dy: (Math.random() - 0.5) * 0.4 });
+        }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.dx;
+                p.y += p.dy;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = "#ff6b00";
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction | Kishan Kumar</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --bg: #0f0f0f;
+            --card: #1a1a1a;
+            --main: #ff6b00;
+            --text: #ffffff;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            padding: 40px 8%;
+        }
+
+        h1 span {
+            color: var(--main);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        .accordion {
+            cursor: pointer;
+            padding: 15px;
+            background: var(--card);
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .accordion:hover {
+            background: var(--main);
+            color: black;
+        }
+
+        .panel {
+            display: none;
+            padding: 15px;
+            background: #151515;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        img {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px var(--main);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 25px;
+            background: var(--main);
+            color: black;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Heart Disease <span>Prediction Using Machine Learning</span></h1>
+    <p>Department of Information Technology | MVGR College of Engineering</p>
+
+    <div class="section">
+        <h2>Introduction</h2>
+        <div class="card">
+            Heart disease is one of the leading causes of mortality worldwide.
+            This project aims to predict heart disease risk using Machine Learning
+            models trained on UCI benchmark dataset.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Project Abstract</h2>
+        <div class="card">
+            Developed a predictive model using Random Forest as primary algorithm.
+            Compared with Logistic Regression, SVM and Decision Tree.
+            Random Forest achieved highest accuracy.
+        </div>
+    </div>
+
+    <div class="accordion">Problem Statement</div>
+    <div class="panel">
+        Early detection of heart disease remains challenging.
+        Current systems lack scalable and accurate predictive models.
+    </div>
+
+    <div class="accordion">Present System</div>
+    <div class="panel">
+        • Medical History & Risk Assessment
+        • Physical Examination
+        • Lab Tests
+        • ECG Analysis
+    </div>
+
+    <div class="accordion">Proposed System</div>
+    <div class="panel">
+        Machine Learning based prediction using:
+        <ul>
+            <li>Random Forest</li>
+            <li>Logistic Regression</li>
+            <li>SVM</li>
+            <li>Decision Tree</li>
+        </ul>
+    </div>
+
+    <div class="accordion">Modules Implemented</div>
+    <div class="panel">
+        <ul>
+            <li>Data Preprocessing</li>
+            <li>Feature Selection (SelectKBest)</li>
+            <li>Model Training</li>
+            <li>Model Evaluation</li>
+            <li>Prediction Generation</li>
+            <li>Result Presentation</li>
+        </ul>
+    </div>
+
+    <div class="accordion">Software & Hardware Requirements</div>
+    <div class="panel">
+        <strong>Software:</strong> Python, Google Colab, NumPy, Pandas, Sklearn, Matplotlib, Seaborn
+        <br><br>
+        <strong>Hardware:</strong> Intel i3, 4GB RAM, 5GB HDD
+    </div>
+
+    <div class="accordion">Outputs & Performance Metrics</div>
+    <div class="panel">
+        • Correlation Heatmap
+        • Data Cleaning Summary
+        • Model Accuracy Comparison
+        • Test Case Evaluations
+        <img src="https://img.icons8.com/color/480/combo-chart.png">
+    </div>
+
+    <div class="accordion">Conclusion</div>
+    <div class="panel">
+        Random Forest showed highest accuracy among tested models.
+        Future work includes deploying model in real-world healthcare systems.
+    </div>
+
+    <div class="accordion">References</div>
+    <div class="panel">
+        IEEE & Research papers (2019–2021)
+        UCI Machine Learning Repository
+        Kaggle Dataset
+    </div>
+
+    <a href="index.html" class="back-btn">⬅ Back to Portfolio</a>
+
+    <script>
+
+        const acc = document.querySelectorAll(".accordion");
+        acc.forEach(a => {
+            a.addEventListener("click", function () {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                panel.style.display = panel.style.display === "block" ? "none" : "block";
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
