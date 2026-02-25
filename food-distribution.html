@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Distribution Management System | Kishan Kumar</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --bg: #0f0f0f;
+            --card: #1a1a1a;
+            --main: #ff6b00;
+            --text: #ffffff;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            padding: 40px 8%;
+        }
+
+        h1 span {
+            color: var(--main);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 15px;
+        }
+
+        .accordion {
+            cursor: pointer;
+            padding: 15px;
+            background: var(--card);
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .accordion:hover {
+            background: var(--main);
+            color: black;
+        }
+
+        .panel {
+            display: none;
+            padding: 15px;
+            background: #151515;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 15px;
+            box-shadow: 0 0 15px var(--main);
+        }
+
+        .flow {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .flow-box {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 15px;
+            width: 250px;
+            text-align: center;
+            margin: 10px;
+            transition: .3s;
+        }
+
+        .flow-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 15px var(--main);
+        }
+
+        .flow-box img {
+            width: 70px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 25px;
+            background: var(--main);
+            color: black;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Food Distribution <span>Management System</span></h1>
+    <p>Web-Based Platform Connecting NGOs, Donors & Restaurants</p>
+
+    <div class="section">
+        <h2>Project Overview</h2>
+        <div class="card">
+            This web-based application works as a mediator between NGOs, donors,
+            and restaurant owners to reduce food wastage and help distribute
+            leftover food to needy people efficiently.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>System Flow</h2>
+        <div class="flow">
+
+            <div class="flow-box">
+                <img src="https://img.icons8.com/color/96/restaurant.png">
+                <h3>Restaurant</h3>
+                Upload leftover food details
+            </div>
+
+            <div class="flow-box">
+                <img src="https://img.icons8.com/color/96/handshake.png">
+                <h3>Platform</h3>
+                Matches NGO requests
+            </div>
+
+            <div class="flow-box">
+                <img src="https://img.icons8.com/color/96/charity.png">
+                <h3>NGO</h3>
+                Collect & Distribute
+            </div>
+
+        </div>
+    </div>
+
+    <div class="accordion">Problem Statement</div>
+    <div class="panel">
+        Large amount of food is wasted daily while many people suffer from hunger.
+        There is no centralized system connecting food donors with NGOs efficiently.
+    </div>
+
+    <div class="accordion">Proposed Solution</div>
+    <div class="panel">
+        A web application where:
+        <ul>
+            <li>Restaurants register and post available food</li>
+            <li>Donors can contribute</li>
+            <li>NGOs can request and collect food</li>
+            <li>Admin manages the overall system</li>
+        </ul>
+    </div>
+
+    <div class="accordion">Modules Implemented</div>
+    <div class="panel">
+        <ul>
+            <li>User Registration & Login</li>
+            <li>Food Donation Upload</li>
+            <li>NGO Request System</li>
+            <li>Admin Dashboard</li>
+            <li>Notification & Tracking System</li>
+        </ul>
+    </div>
+
+    <div class="accordion">Technology Used</div>
+    <div class="panel">
+        HTML, CSS, JavaScript
+        Backend: PHP / Python (depending on implementation)
+        Database: MySQL
+    </div>
+
+    <div class="accordion">Business Impact</div>
+    <div class="panel">
+        • Reduces food wastage
+        • Improves NGO coordination
+        • Provides real-time donation tracking
+        • Social impact driven system
+    </div>
+
+    <img src="https://img.icons8.com/color/480/food.png">
+
+    <a href="index.html" class="back-btn">⬅ Back to Portfolio</a>
+
+    <script>
+
+        const acc = document.querySelectorAll(".accordion");
+        acc.forEach(a => {
+            a.addEventListener("click", function () {
+                const panel = this.nextElementSibling;
+                panel.style.display = panel.style.display === "block" ? "none" : "block";
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

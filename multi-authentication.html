@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Level Authentication System | Kishan Kumar</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --bg: #0f0f0f;
+            --card: #1a1a1a;
+            --main: #ff6b00;
+            --text: #ffffff;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            padding: 40px 8%;
+        }
+
+        /* Floating Security Icons */
+        .floating-security {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .floating-security img {
+            position: absolute;
+            width: 35px;
+            opacity: 0.08;
+            animation: floatSec 20s linear infinite;
+        }
+
+        @keyframes floatSec {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+            }
+        }
+
+        h1 span {
+            color: var(--main);
+        }
+
+        h2 {
+            margin-top: 25px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 15px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 20px var(--main);
+        }
+
+        /* Flow Boxes */
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .flow-box {
+            background: var(--card);
+            width: 250px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 10px;
+            transition: .3s;
+        }
+
+        .flow-box img {
+            width: 70px;
+            margin-bottom: 10px;
+        }
+
+        .flow-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 15px var(--main);
+        }
+
+        /* Accordion */
+        .accordion {
+            cursor: pointer;
+            padding: 15px;
+            background: var(--card);
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .accordion:hover {
+            background: var(--main);
+            color: black;
+        }
+
+        .panel {
+            display: none;
+            padding: 15px;
+            background: #151515;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 25px;
+            background: var(--main);
+            color: black;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Background Security Icons -->
+    <div class="floating-security">
+        <img src="https://img.icons8.com/color/96/lock.png" style="left:10%;animation-delay:0s;">
+        <img src="https://img.icons8.com/color/96/shield.png" style="left:30%;animation-delay:4s;">
+        <img src="https://img.icons8.com/color/96/fingerprint.png" style="left:50%;animation-delay:8s;">
+        <img src="https://img.icons8.com/color/96/password.png" style="left:70%;animation-delay:12s;">
+        <img src="https://img.icons8.com/color/96/security-checked.png" style="left:85%;animation-delay:16s;">
+    </div>
+
+    <h1>Multi-Level <span>Authentication System</span></h1>
+    <p>Advanced Security Access Control System</p>
+
+    <div class="section">
+        <h2>Project Overview</h2>
+        <div class="card">
+            This project provides enhanced security using multiple authentication layers.
+            It ensures secure system access by implementing different levels of authentication
+            including password, OTP verification, and role-based access control.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Security Flow</h2>
+        <div class="flow">
+
+            <div class="flow-box">
+                <img src="https://img.icons8.com/color/96/password.png">
+                <h3>Level 1</h3>
+                Username & Password Verification
+            </div>
+
+            <div class="flow-box">
+                <img src="https://img.icons8.com/color/96/sms.png">
+                <h3>Level 2</h3>
+                OTP Verification
+            </div>
+
+            <div class="flow-box">
+                <img src="https://img.icons8.com/color/96/fingerprint.png">
+                <h3>Level 3</h3>
+                Biometric / Advanced Authentication
+            </div>
+
+            <div class="flow-box">
+                <img src="https://img.icons8.com/color/96/shield.png">
+                <h3>Level 4</h3>
+                Role-Based Authorization
+            </div>
+
+        </div>
+    </div>
+
+    <div class="accordion">Problem Statement</div>
+    <div class="panel">
+        Traditional single-level authentication systems are vulnerable to breaches.
+        A secure system requires layered authentication mechanisms.
+    </div>
+
+    <div class="accordion">Proposed Solution</div>
+    <div class="panel">
+        Implemented a system where users must pass through multiple verification
+        levels before accessing sensitive resources.
+    </div>
+
+    <div class="accordion">Technology Stack</div>
+    <div class="panel">
+        HTML, CSS, JavaScript
+        Backend: PHP / Python
+        Database: MySQL
+    </div>
+
+    <div class="accordion">Security Features</div>
+    <div class="panel">
+        • Encrypted Password Storage
+        • OTP-Based Login
+        • Session Management
+        • Role-Based Access
+        • Admin Control Panel
+    </div>
+
+    <div class="accordion">Future Enhancements</div>
+    <div class="panel">
+        • AI-Based Intrusion Detection
+        • Biometric Hardware Integration
+        • Real-Time Threat Monitoring
+    </div>
+
+    <a href="index.html" class="back-btn">⬅ Back to Portfolio</a>
+
+    <script>
+
+        const acc = document.querySelectorAll(".accordion");
+        acc.forEach(a => {
+            a.addEventListener("click", function () {
+                const panel = this.nextElementSibling;
+                panel.style.display = panel.style.display === "block" ? "none" : "block";
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
